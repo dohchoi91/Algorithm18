@@ -1,7 +1,7 @@
-#Algorithm18
-¾Ë°í¸®Áò ¿¬½ÀÇÏ±â 
+# Algorithm18
+ì•Œê³ ë¦¬ì¦˜ ì—°ìŠµí•˜ê¸° 
 
-## ¿¬½À »çÀÌÆ®
+## ì—°ìŠµ ì‚¬ì´íŠ¸
 ### 1. Hackerrank : https://hackerrank.com
 ### 2. Programmers : https://programmers.co.kr
 ### 3. Baekjoon : https://www.acmicpc.net
