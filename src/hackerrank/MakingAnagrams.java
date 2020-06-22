@@ -1,12 +1,10 @@
 package hackerrank;
 
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 
 public class MakingAnagrams {
 	public static int numberNeeded(String first, String second) {
@@ -81,8 +79,6 @@ public class MakingAnagrams {
         String b = "jxwtrhvujlmrpdoqbisbwhmgpmeoke";
 
         int res = numberNeeded(a, b);
-
-
         scanner.close();
     }
 }
