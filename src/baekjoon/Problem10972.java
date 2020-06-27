@@ -1,13 +1,13 @@
-package boj;
+package baekjoon;
 import java.util.Scanner;
 
-// ´ÙÀ½ ¼ø¿­ ¹®Á¦ : https://www.acmicpc.net/problem/10972
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : https://www.acmicpc.net/problem/10972
 public class Problem10972 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		StringBuilder stb = new StringBuilder();
 		
-		// ÀÔ·Â °³¼ö°¡ ÁÖ¾îÁö¸é ±»ÀÌ LineÀ¸·Î ¾È¹Þ¾Æµµ µÈ´Ù -> LineÀ¸·Î ¹Þ°í splitÇÏ´Â°Ô ´õ ½Ã°£ °É¸²
+		// ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Lineï¿½ï¿½ï¿½ï¿½ ï¿½È¹Þ¾Æµï¿½ ï¿½È´ï¿½ -> Lineï¿½ï¿½ï¿½ï¿½ ï¿½Þ°ï¿½ splitï¿½Ï´Â°ï¿½ ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½É¸ï¿½
 		int n = sc.nextInt();
 
 		int[] result = new int[n];
@@ -17,30 +17,30 @@ public class Problem10972 {
 		
 		int maxIdx = 0;
 		
-		// A[i-1] < A[i]°¡ ¼º¸³µÇ´À °¡Àå Å« i (= °¡Àå ¿À¸¥ÂÊ)
+		// A[i-1] < A[i]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« i (= ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		for (int i = 1; i < n; i++) {
 			if ((result[i - 1] < result[i]) && (maxIdx < i )) {
 				maxIdx = i;	
 			}
 		}
 		
-		if (maxIdx <= 0) { // ´ÙÀ½¼ø¿­ Á¸Àç X
+		if (maxIdx <= 0) { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ X
 			stb.append("-1");
 		} else {
 			int maxIdx2 = 0; 
 			for (int j = maxIdx; j < n; j++) {
-				// j >= maxIdx ÀÌ¸é¼­ A[j] > A[maxIdx - 1]À» ¸¸Á·ÇÏ´Â °¡Àå Å« j
+				// j >= maxIdx ï¿½Ì¸é¼­ A[j] > A[maxIdx - 1]ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ Å« j
 				if ((result[maxIdx - 1] < result[j]) && maxIdx2 < j) {
 					maxIdx2 = j;
 				}
 			}
 			
-			// A[maxIdx - 1] A[maxIdx2] ÀÚ¸® Swap
+			// A[maxIdx - 1] A[maxIdx2] ï¿½Ú¸ï¿½ Swap
 			int tmp = result[maxIdx - 1];
 			result[maxIdx - 1] = result[maxIdx2];
 			result[maxIdx2] = tmp;
 			
-			// A[maxIdx] ºÎÅÍ ³¡±îÁö revese -> ¾ç Ã¹´Ü°ú ³¡´ÜÀÇ ÀÚ¸® ±³Ã¼ 
+			// A[maxIdx] ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ revese -> ï¿½ï¿½ Ã¹ï¿½Ü°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½Ã¼ 
 			maxIdx2 = n - 1;
 			while (maxIdx <= maxIdx2) {
 				tmp = result[maxIdx];
