@@ -11,16 +11,16 @@ package programmers.level2;
 
 public class OneTwoFourWorld {
 	public static String solution(int n) {
-        int[] rem = {1,2,4};
-        if (n > 3) {
-        	return  solution((n - 1) / 3) + String.valueOf(rem[(n - 1) % 3]);
-        }
-        return String.valueOf(rem[(n - 1) % 3]);
-	 }
-	 
-	 public static void main(String args[]) {
-		 for (int i = 1; i <= 20; i++) {
-			 System.out.println(solution(i));
-		 } 
-	 }
+		int[] rem = { 1, 2, 4 };
+		if (n > 3) {
+			return solution((n - 1) / 3) + String.valueOf(rem[(n - 1) % 3]);
+		}
+		return String.valueOf(rem[(n - 1) % 3]);
+	}
+
+	public static void main(String args[]) {
+		for (int i = 1; i <= 20; i++) {
+			System.out.println(solution(i));
+		}
+	}
 }
