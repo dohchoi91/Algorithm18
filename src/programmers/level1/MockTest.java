@@ -33,13 +33,10 @@ public class MockTest {
         int maxValue = ansCountArray[0];
         
         for (int i = 1; i < ansCountArray.length; i++) {
-            if (maxValue < ansCountArray[i]) {
-                maxAnsList.clear();
-                maxIdx = i + 1;
-                maxValue = ansCountArray[i];
-                maxAnsList.add(maxIdx);
-                
-            } else if (maxValue == ansCountArray[i]) {
+            if (maxValue <= ansCountArray[i]) {
+                if (maxValue == ansCountArray[i]) {
+                	maxAnsList.clear();
+                }
                 maxIdx = i + 1;
                 maxValue = ansCountArray[i];
                 maxAnsList.add(maxIdx);
