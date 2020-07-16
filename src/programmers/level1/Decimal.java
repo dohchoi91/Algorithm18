@@ -33,7 +33,7 @@ public class Decimal {
     	List<Integer> decimalList = new ArrayList<Integer>();
     	decimalList.add(2);
     	
-    	for (int i = 2; i <= n; i++) {
+    	for (int i = 3; i <= n; i++) {
         	for (int j = 0; j < decimalList.size(); j++) {
         		int decimal = decimalList.get(j); 
         		
@@ -55,18 +55,18 @@ public class Decimal {
     	answer = decimalList.size();
     	
 //		번외 시도  : 이렇게 해도 통과  	
-    	answer = 1;
-    	for (int i = 2; i <= n; i++) {
-    		int maxIdx = (int)Math.sqrt(i) + 1;
-	    	for (int j = 2; j <= maxIdx; j++) {
-	    		if (i % j == 0) {
-	    			break;
-	    		}
-	    		if (j == maxIdx) {
-	    			answer++;
-	    		}
-	    	}
-    	}
+//    	answer = 1;
+//    	for (int i = 2; i <= n; i++) {
+//    		int maxIdx = (int)Math.sqrt(i) + 1;
+//	    	for (int j = 2; j <= maxIdx; j++) {
+//	    		if (i % j == 0) {
+//	    			break;
+//	    		}
+//	    		if (j == maxIdx) {
+//	    			answer++;
+//	    		}
+//	    	}
+//    	}
     	
     	return answer;
     }
