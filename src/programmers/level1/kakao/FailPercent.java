@@ -1,4 +1,4 @@
-package programmers.level1;
+package programmers.level1.kakao;
 
 import static org.junit.Assert.assertArrayEquals;
 
