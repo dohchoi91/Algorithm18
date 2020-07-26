@@ -58,7 +58,7 @@ public class DartGame {
 	void test1() {
 		assertEquals(37, solution("1S2D*3T"));
 	}
-	
+
 	@Test
 	void test2() {
 		assertEquals(9, solution("1D2S#10S"));
@@ -68,21 +68,23 @@ public class DartGame {
 	void test3() {
 		assertEquals(3, solution("1D2S0T"));
 	}
-	
+
 	@Test
 	void test4() {
 		assertEquals(23, solution("1S*2T*3S"));
 	}
+
 	@Test
 	void test5() {
 		assertEquals(5, solution("1D#2S*3S"));
 	}
+
 	@Test
 	void testEtc() {
-		assertAll(()->{
+		assertAll(() -> {
 			assertEquals(-4, solution("1T2D3D#"));
 			assertEquals(59, solution("1D2S3T*"));
-			
+
 		});
 	}
     
