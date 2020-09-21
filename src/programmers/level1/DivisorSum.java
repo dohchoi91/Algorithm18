@@ -38,7 +38,21 @@ public class DivisorSum {
 		}
 		return answer;
 	}
-
+	
+	// 20-09-22 : 굳이 map이 필요 없을 듯. 범위만 정확하게 지정해주면 끝
+    	public int solution(int n) {
+		int answer = 0;
+		for (int i = 1; i < (int)Math.sqrt(n) + 1; i++) {
+			if (n % i == 0) {
+				int divide = n / i; 
+				answer += (i  + divide);
+				if (i == divide) {
+					answer -= divide;
+				}
+			}
+		}
+		return answer;
+	}
 	@Test
 	void test1() {
 		assertEquals(28, solution(12));
