@@ -2,8 +2,6 @@ package base;
 
 /**
  * https://bcp0109.tistory.com/14
- * @author DAVID
- *
  */
 public class Permutation {
     public static void main(String[] args) {

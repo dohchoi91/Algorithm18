@@ -13,11 +13,11 @@ import org.junit.jupiter.api.Test;
  * [포인트]
  * 1. 최대공약수, 최소 공배수의 특징 파악
  */
-public class GcmLcm {
+public class GcdLcm {
 	public int[] solution(int n, int m) {
 		int big = Math.max(n, m);
 		int small = Math.min(n, m);
-		int gcm = 1;
+		int gcd = 1;
 		
 		// 시도 1 : 순차적으로 나누고 결과에 반영 그리고 리셋 후 다시 나누는 과정 
 //		boolean isRun = true;
@@ -43,10 +43,10 @@ public class GcmLcm {
 		// 시도 2 : for문으로 순차적으로 증가 시키고 결과 반영
 		for (int i = 2; i <= small; i++) {
 			if (n % i == 0 && m % i == 0) {
-				gcm = i;
+				gcd = i;
 			}
 		}
-		int[] answer = { gcm, (n * m / gcm) };
+		int[] answer = { gcd, (n * m / gcd) };
 		
 		
 		return answer;
