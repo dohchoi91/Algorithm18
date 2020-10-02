@@ -55,26 +55,21 @@ public class Decimal {
     	answer = decimalList.size();
     	
 //		번외 시도  : 이렇게 해도 통과  	
-    	
-    	answer = findDecimal(n);
+//    	answer = 1;
+//    	for (int i = 2; i <= n; i++) {
+//    		int maxIdx = (int)Math.sqrt(i) + 1;
+//	    	for (int j = 2; j <= maxIdx; j++) {
+//	    		if (i % j == 0) {
+//	    			break;
+//	    		}
+//	    		if (j == maxIdx) {
+//	    			answer++;
+//	    		}
+//	    	}
+//    	}
     	
     	return answer;
     }
-	private static int findDecimal(int n) {
-		int answer = 1;
-		for (int i = 2; i <= n; i++) {
-    		int maxIdx = (int)Math.sqrt(i) + 1;
-	    	for (int j = 2; j <= maxIdx; j++) {
-	    		if (i % j == 0) {
-	    			break;
-	    		}
-	    		if (j == maxIdx) {
-	    			answer++;
-	    		}
-	    	}
-    	}
-		return answer;
-	}
     public static void main(String args[]) {
     	System.out.println(solution(100));
     }

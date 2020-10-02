@@ -1,15 +1,11 @@
 package programmers.level2;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
 /**
- * 탑 
+ * 탑
  * https://programmers.co.kr/learn/courses/30/lessons/42588
  */
 public class Top {
@@ -44,5 +40,4 @@ public class Top {
 	void test3() {
 		assertArrayEquals(new int[] { 0, 0, 2, 0, 0, 5, 6 }, solution(new int[] { 1, 5, 3, 6, 7, 6, 5 }));
 	}
-
 }
