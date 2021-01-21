@@ -4,7 +4,7 @@ package programmers.level1;
  * 행렬의 덧셈
  * https://programmers.co.kr/learn/courses/30/lessons/12950
  */
-import static org.junit.Assert.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class MatrixPlus {
