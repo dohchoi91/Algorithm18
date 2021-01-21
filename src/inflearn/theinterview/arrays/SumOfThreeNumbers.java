@@ -1,4 +1,4 @@
-package inflearn.arrays;
+package inflearn.theinterview.arrays;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
