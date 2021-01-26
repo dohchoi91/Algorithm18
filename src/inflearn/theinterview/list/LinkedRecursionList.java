@@ -11,10 +11,10 @@ public class LinkedRecursionList {
         }
     }
 
-    LinkedNode root;
+    LinkedNode head;
 
     private void add(Integer num) {
-        this.root = addNode(this.root, num);
+        this.head = addNode(this.head, num);
     }
 
     private LinkedNode addNode(LinkedNode node, Integer num) {
@@ -22,11 +22,10 @@ public class LinkedRecursionList {
             node.next = addNode(node.next, num);
             return node;
         }
-        LinkedNode newNode = new LinkedNode(num);
-        return newNode;
+        return new LinkedNode(num);
     }
     private void print() {
-        printNode(root);
+        printNode(head);
     }
 
     private void printNode(LinkedNode node) {
