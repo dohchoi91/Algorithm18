@@ -1,49 +1,36 @@
 package base;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
+// https://ko.wikipedia.org/wiki/%ED%80%B5_%EC%A0%95%EB%A0%AC
 public class QuickSort {
-	// 0. ÁÂÃø°ªÀ» ÇÇº¿À¸·Î µĞ´Ù
-	// 1. Ã³À½ ½ÃÀÛ ÇÒ ¶§ ÇÇº¿°ªÀ» ±âÁØ À¸·Î ÀüÃ¼¸¦ ºñ±³ ÇÑ´Ù 
-	// 2. ºñ±³ ½Ã  ÇÇº¿°ªº¸´Ù ÀÛÀ» °æ¿ì ÇØ´ç ÀÚ¸®¸¦ ½º¿ÒÇÑ´Ù. (ÀÚ¸®¿¡ ´ëÇÑ ÀÎµ¦½º ÁõÁø)
-	// 3. ¸ğµç ºñ±³¸¦ ¸¶Ä£ ÈÄ ÇÇº¿°ªÀ» ¸¶Áö¸·À¸·Î º¯°æµÈ ÀÎµ¦½º·Î ÀÚ¸® º¯°æ.
-	static void quick(int left, int right, int[] arr) {
-        int pivot = left;
-        int j = pivot;
-        int temp;
-
+    static void quick(int left, int right, int[] arr) {
+        int i, j, pivot, tmp;
         if (left < right) {
-            for (int i = left + 1; i <= right; i++) {
-                //swap
-                if (arr[i] < arr[pivot]) {
-                    j++;
-                    temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
-                }
-            }
-            temp = arr[left];
-            arr[left] = arr[j];
-            arr[j] = temp;
+            i = left;
+            j = right;
+            pivot = arr[(left + right) / 2];
 
-            pivot = j;
-            quick(left, pivot - 1, arr);
-            quick(pivot + 1, right, arr);
+            //ë¶„í•  ê³¼ì •
+            while (i < j) {
+                while (arr[j] > pivot) j--;
+                // ì´ ë¶€ë¶„ì—ì„œ arr[j-1]ì— ì ‘ê·¼í•´ì„œ ìµì…‰ì…˜ ë°œìƒê°€ëŠ¥í•¨.
+                while (i < j && arr[i] < pivot) i++;
+
+                tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+            //ì •ë ¬ ê³¼ì •
+            quick(left, i - 1, arr);
+            quick(i + 1, right, arr);
         }
     }
 
-	public static void main(String[] args) {
-		
-		int[] arr = { 3, 1, 4, 5, 7, 9, 2, 6, 8 };
-		HashSet set = new HashSet<>(Arrays.asList(arr));
-				
-		quick(0, 8, arr);
-		
-		for (int i = 0; i < 9; i++) {
-			System.out.print(arr[i] + " ");
-		}
-
-	}
+    public static void main(String[] args) {
+        int[] arr = {4, 3, 1, 5, 10, 7, 9, 2, 6, 8};
+        quick(0, arr.length - 1, arr);
+        System.out.print(Arrays.toString(arr));
+    }
 
 }
