@@ -2,7 +2,10 @@ package baekjoon;
 
 import java.util.Scanner;
 
-
+/**
+ * 별 찍기 - 5
+ * https://www.acmicpc.net/problem/2442
+ */
 public class Problem2442 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
