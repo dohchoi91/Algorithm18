@@ -4,11 +4,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * 큰 수 만들기 https://programmers.co.kr/learn/courses/30/lessons/42883
+ * 큰 수 만들기
+ * https://programmers.co.kr/learn/courses/30/lessons/42883
  */
 public class MakeBigNumber {
 	public String solution(String number, int k) {
