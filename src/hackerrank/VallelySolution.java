@@ -1,17 +1,18 @@
 package hackerrank;
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
+import org.junit.jupiter.api.Test;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * Counting Valleys
+ * https://www.hackerrank.com/challenges/counting-valleys/problem?h_r=internal-search
+ */
 public class VallelySolution {
 
     // Complete the countingValleys function below.
-    static int countingValleys(int n, String s) {
-        
+    static int countingValleys1(String s) {
         char[] paths = s.toCharArray();
         
         int level = 0;
@@ -32,20 +33,40 @@ public class VallelySolution {
                     valleyCount++;
                 }
             }
-            
-
         }
-
         return valleyCount;
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
+    static int countingValleys2(String s) {
+        int valley = 0;
 
-    public static void main(String[] args) throws IOException {
+        char[] paths = s.toCharArray();
+        Stack<Character> stack = new Stack<>();
 
-        int n = 8;
-        String s = "UDDDUDUU";
-        int result = countingValleys(n, s);
-        System.out.println(result);
+        for (char record : paths) {
+            if (stack.isEmpty()) {
+                stack.push(record);
+            } else {
+                if (stack.peek() != record) {
+                    stack.pop();
+                } else {
+                    stack.push(record);
+                }
+                if (stack.isEmpty() && record == 'U') {
+                    valley++;
+                }
+            }
+        }
+        return valley;
+    }
+
+    @Test
+    void test1() {
+        assertEquals(1, countingValleys2("UDDDUDUU"));
+    }
+
+    @Test
+    void test2() {
+        assertEquals(2, countingValleys2("DDUUDDUDUUUD"));
     }
 }
