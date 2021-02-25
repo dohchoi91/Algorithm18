@@ -2,9 +2,7 @@ package programmers.level2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 import org.junit.jupiter.api.Test;
@@ -12,7 +10,7 @@ import org.junit.jupiter.api.Test;
 /**
  * 다리를 지나는 트럭
  * https://programmers.co.kr/learn/courses/30/lessons/42583
- * 08/05 -> Fail 
+ * 08/05 -> Fail
  * 08/10 -> Fail
  * [포인트]
  * 1. 시간의 흐름과 다리의 길이에 대해서 생각.
@@ -25,11 +23,11 @@ public class TruckPassing {
 		int sum = 0;
 		int idx = 0;
 		boolean next = true;
-		
+
 		Queue<Integer> onBridge = new LinkedList<>();
-		List<Integer> finBridge = new ArrayList<>();
-		
-		while (finBridge.size() < truck_weights.length) {
+		int finish = 0;
+
+		while (finish < truck_weights.length) {
 			if (next && sum + truck_weights[idx] <= weight) {
 				sum += truck_weights[idx];
 				onBridge.add(truck_weights[idx]);
@@ -45,7 +43,7 @@ public class TruckPassing {
 				int element = onBridge.poll();
 				if (element > 0) {
 					sum -= element;
-					finBridge.add(element);
+					finish++;
 				}
 			}
 			second++;
